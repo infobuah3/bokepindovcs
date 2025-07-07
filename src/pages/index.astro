@@ -4,7 +4,7 @@ import Layout from '../layouts/BaseLayout.astro';
 import VideoCard from '../components/VideoCard.astro';
 import { slugify } from '../utils/slugify';
 import { getAllVideos, type VideoData } from '../utils/data';
-import { terbit, nama, url, desk, google, yandex } from '../utils/site';
+import { terbit, nama, url, desk } from '../utils/site';
 export const prerender = true;
 
 const allVideos: VideoData[] = await getAllVideos();
@@ -155,9 +155,6 @@ const schemaBreadcrumb = {
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaWebPage)} />
   <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)} />
-
-  <meta name="google-site-verification" content={google} />
-  <meta name="yandex-verification" content={yandex} />
 
   <main class="home-page" itemscope itemtype="http://schema.org/WebPage">
     <meta itemprop="url" content={currentUrl} />
